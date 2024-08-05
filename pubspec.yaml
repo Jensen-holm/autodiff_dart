@@ -1,5 +1,5 @@
 name: autodiff_dart
-description: A sample command-line application.
+description: automatic differentiation library for Dart inspired by micrograd
 version: 1.0.0
 repository: https://github.com/Jensen-holm/autodiff_dart
 
