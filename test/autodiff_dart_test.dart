@@ -1,22 +1,48 @@
-import 'package:autodiff_dart/autodiff_dart.dart';
 import 'package:test/test.dart';
+import 'package:autodiff_dart/scalar.dart';
+import 'package:autodiff_dart/ops.dart';
 
 void main() {
-  test('Number + Number', () {
-    var n = newNumber(5);
-    var x = newNumber(10);
+  test('newScalar', () {
+    var n = newScalar(9);
+
+    expect(n.value, 9);
+    expect(n.op, Op.na);
+  });
+
+  test('Scalar + Scalar', () {
+    var n = newScalar(5);
+    var x = newScalar(10);
     var result = x + n;
 
-    identical(newNumber(15), result);
+    identical(newScalar, result);
+    expect(result.value, 15);
     expect(result.op, Op.add);
   });
 
-  test('Number - Number', () {
-    var n = newNumber(0);
-    var x = newNumber(10);
+  test('Scalar - Scalar', () {
+    var n = newScalar(0);
+    var x = newScalar(10);
     var result = n - x;
 
-    identical(newNumber(-10), result);
+    identical(newScalar, result);
+    expect(result.value, -10);
     expect(result.op, Op.sub);
+  });
+
+  test('Scalar == Scalar', () {
+    var n = newScalar(10);
+    var x = newScalar(10);
+
+    expect(n == x, isTrue);
+    expect(n != x, isFalse);
+  });
+
+  test('Scalar hashCode', () {
+    var n = newScalar(100);
+    var set = <Scalar>{};
+    set.add(n);
+
+    expect(set.contains(n), isTrue);
   });
 }
