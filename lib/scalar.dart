@@ -1,27 +1,30 @@
 import 'ops.dart';
 
-Scalar newScalar(num value) {
-  return Scalar(value, Op.na);
-}
-
 class Scalar {
-  num value;
   Op op;
+  num value;
+  num grad = 0;
 
-  Scalar(this.value, this.op);
+  Scalar(this.value, [this.op = Op.na]);
 
   Scalar operator +(covariant Scalar other) {
-    var result = _doOp(value + other.value, Op.add);
+    var result = Scalar(value + other.value, Op.add);
     return result;
   }
 
   Scalar operator -(covariant Scalar other) {
-    var result = _doOp(value - other.value, Op.sub);
+    var result = Scalar(value - other.value, Op.sub);
     return result;
   }
 
-  Scalar _doOp(num resultVal, Op op) {
-    return Scalar(resultVal, op);
+  Scalar operator *(covariant Scalar other) {
+    var result = Scalar(value * other.value, Op.mul);
+    return result;
+  }
+
+  void backward() {
+    // TODO : implement backpropagation
+    // right now does nothing
   }
 
   @override
