@@ -2,9 +2,11 @@
 
 automatic differentiation library for Dart!
 
+[![Static Badge](https://img.shields.io/badge/Dart_package-blue)](https://pub.dev/packages/autodiff_dart)
+![Pub Points](https://img.shields.io/pub/points/autodiff_dart)
+
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/Jensen-holm/autodiff_dart)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/Jensen-holm/autodiff_dart/dart.yml)
-![Pub Points](https://img.shields.io/pub/points/autodiff_dart)
 
 inspired by [Karpathy's micrograd](https://github.com/karpathy/micrograd), I thought that building this would be a good experience for me to learn dart, and deepen my understanding of backpropagation.
 
