@@ -1,4 +1,4 @@
-import 'package:autodiff_dart/Value.dart';
+import 'package:autodiff_dart/value.dart';
 
 void main() {
   // y = mx + b
@@ -7,7 +7,7 @@ void main() {
   var b = Value(5);
   var y = m * x + b;
 
-  // compute dy/dx (right now does nothing)
+  // compute dy/dx
   y.backward();
   print("$y = $m * $x + $b");
 }
