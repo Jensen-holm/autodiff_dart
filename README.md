@@ -16,13 +16,13 @@ This package would be useful as a flutter package in a calculator application wh
 ## Simple Example
 
 ```dart
-import 'package:autodiff_dart/scalar.dart';
+import 'package:autodiff_dart/value.dart';
 
 void main() {
     // y = mx + b
-    var m = Scalar(3);
-    var x = Scalar(4);
-    var b = Scalar(5);
+    var m = Value(3);
+    var x = Value(4);
+    var b = Value(5);
     var y = m * x + b;
 
     // compute dy/dx
