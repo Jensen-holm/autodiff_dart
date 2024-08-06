@@ -17,7 +17,7 @@ void main() {
 
     identical(Value, result);
     expect(result.value, 15);
-    expect(result.op, Op.add);
+    expect(result.op, addOp);
   });
 
   test('Value - Value', () {
@@ -27,7 +27,7 @@ void main() {
 
     identical(Value, result);
     expect(result.value, -10);
-    expect(result.op, Op.sub);
+    expect(result.op, subOp);
   });
 
   test('Value * Value', () {
@@ -37,7 +37,7 @@ void main() {
 
     identical(Value, result);
     expect(result.value, 20);
-    expect(result.op, Op.mul);
+    expect(result.op, mulOp);
   });
 
   test('Value == Value', () {

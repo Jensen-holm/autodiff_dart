@@ -3,24 +3,23 @@ import 'ops.dart';
 class Value {
   num value;
   num grad = 0;
-
-  Op? op;
+  String? op;
   Function? backwardFn;
 
   Value(this.value, {this.op});
 
   Value operator +(covariant Value other) {
-    var result = Value(value + other.value, op: Op.add);
+    var result = Value(value + other.value, op: addOp);
     return result;
   }
 
   Value operator -(covariant Value other) {
-    var result = Value(value - other.value, op: Op.sub);
+    var result = Value(value - other.value, op: subOp);
     return result;
   }
 
   Value operator *(covariant Value other) {
-    var result = Value(value * other.value, op: Op.mul);
+    var result = Value(value * other.value, op: mulOp);
     return result;
   }
 

@@ -1,5 +1,3 @@
-enum Op {
-  add,
-  sub,
-  mul,
-}
+const String addOp = "+";
+const String subOp = "-";
+const String mulOp = "*";
