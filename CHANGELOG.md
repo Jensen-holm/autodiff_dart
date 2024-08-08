@@ -1,3 +1,3 @@
-## 1.0.1
+## 1.0.2
 
-- Backpropagation works.
+- Value.toString() now shows the gradient of the value.

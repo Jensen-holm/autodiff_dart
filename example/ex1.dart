@@ -1,7 +1,6 @@
 import 'package:autodiff_dart/value.dart';
 
 void main() {
-  // y = mx + b
   var m = Value(3);
   var x = Value(4);
   var b = Value(5);
@@ -9,5 +8,7 @@ void main() {
 
   // compute dy/dx
   y.backward();
-  print("$y = $m * $x + $b");
+
+  // print gradients
+  print("$m\n$x\n$b");
 }
