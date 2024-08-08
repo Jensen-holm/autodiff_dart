@@ -7,7 +7,7 @@ class Value {
   num grad = 0;
   String? op;
 
-  Function? _backwardFn;
+  Function _backwardFn = () => {};
   final List<Value> _prev = [];
 
   Value(this.value, {this.op});
@@ -19,7 +19,6 @@ class Value {
           grad += result.grad,
           other.grad += result.grad,
         };
-
     return result;
   }
 
@@ -30,7 +29,6 @@ class Value {
           grad += (other.value * result.grad),
           other.grad += (value * result.grad),
         };
-
     return result;
   }
 
@@ -40,7 +38,6 @@ class Value {
     _backwardFn = () => {
           grad += ((other.value * pow(value, other.value - 1)) * result.grad),
         };
-
     return result;
   }
 
@@ -77,11 +74,8 @@ class Value {
     topo = _buildTopoOrder(this, visited, topo);
 
     grad = 1;
-    for (var idx = topo.length; idx >= 0; idx--) {
+    for (var idx = topo.length - 1; idx >= 0; idx--) {
       var val = topo[idx];
-      if (val._prev.length < 1) {
-        break; // should mean root node
-      }
       val._backwardFn();
     }
   }
