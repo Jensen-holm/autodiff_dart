@@ -51,7 +51,7 @@ class Value {
 
   @override
   String toString() {
-    return "Value Object{value: $value, op: $op}";
+    return "Value Object{value: $value, op: $op, grad: $grad}";
   }
 
   List<dynamic> _buildTopoOrder(Value root, Set visited, List<dynamic> topo) {
