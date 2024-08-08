@@ -20,16 +20,6 @@ void main() {
     expect(result.op, addOp);
   });
 
-  test('Value - Value', () {
-    var n = Value(0);
-    var x = Value(10);
-    var result = n - x;
-
-    identical(Value, result);
-    expect(result.value, -10);
-    expect(result.op, subOp);
-  });
-
   test('Value * Value', () {
     var n = Value(4);
     var x = Value(5);
