@@ -40,6 +40,10 @@ Value Object{value: 4, op: null, grad: 3}
 Value Object{value: 5, op: null, grad: 1}
 ```
 
+## Installation
+
+`dart pub add autodiff_dart`
+
 ## Contributing
 
 PR's welcome!
