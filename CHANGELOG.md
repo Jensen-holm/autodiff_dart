@@ -1,3 +1,3 @@
-## 1.0.2
+## 1.0.3
 
-- Value.toString() now shows the gradient of the value.
+- installation notes.
